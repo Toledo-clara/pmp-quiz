@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PMP 후기 기반 영문 우선 퀴즈</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div>
+          <p class="eyebrow">PMP 2026년 6월 응시 대비 · ITPE review-theme based</p>
+          <h1>PMP 후기 기반 영문 우선 퀴즈</h1>
+        </div>
+        <div class="summary" aria-label="풀이 현황">
+          <div>
+            <span id="answeredCount">0</span>
+            <small>선택</small>
+          </div>
+          <div>
+            <span id="checkedCount">0</span>
+            <small>확인</small>
+          </div>
+          <div>
+            <span id="correctCount">0</span>
+            <small>정답</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="controls" aria-label="퀴즈 이동">
+        <button class="nav-button" id="prevPage" type="button">← 이전</button>
+        <div class="page-status">
+          <strong id="pageLabel">1 / 40</strong>
+          <span id="rangeLabel">1-5번</span>
+        </div>
+        <button class="nav-button" id="nextPage" type="button">다음 →</button>
+      </section>
+
+      <div class="progress-track" aria-hidden="true">
+        <div id="progressBar"></div>
+      </div>
+
+      <section id="quizList" class="quiz-list" aria-live="polite"></section>
+
+      <section class="controls controls--bottom" aria-label="퀴즈 이동 하단">
+        <button class="nav-button" id="prevPageBottom" type="button">← 이전</button>
+        <button class="reset-button" id="resetQuiz" type="button">풀이 초기화</button>
+        <button class="nav-button" id="nextPageBottom" type="button">다음 →</button>
+      </section>
+    </main>
+
+    <template id="questionTemplate">
+      <article class="question-card">
+        <div class="question-card__head">
+          <div>
+            <p class="question-meta"></p>
+            <h2 class="question-title"></h2>
+          </div>
+          <div class="pill-stack">
+            <span class="confidence-pill"></span>
+            <span class="status-pill"></span>
+          </div>
+        </div>
+        <fieldset class="choices"></fieldset>
+        <div class="question-actions">
+          <button class="check-button" type="button">정답 확인</button>
+        </div>
+        <div class="feedback" hidden></div>
+      </article>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
